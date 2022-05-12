@@ -6,6 +6,7 @@ $white: #fff;
 $black: #000;
 $yellow: #E8C300;
 $white-opacity: rgba(255, 255, 255, 0.5);
+$black-opacity: rgba(0, 0, 0, 0.5);
 
 $wrap: 1440px;
 $container: 1230px;
@@ -30,6 +31,13 @@ $mc: 0 auto;
   margin-bottom: 35px;
 }
 
+@mixin img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0px 0px 50px $black-opacity);
+  border-radius: 5px;
+}
+
 body {
   background: $white;
   font-family: $os;
@@ -51,4 +59,32 @@ svg {
   padding: 0 15px;
   max-width: $container;
   margin: $mc;
+}
+
+.circle {
+  width: 250px;
+  height: 250px;
+  border: 20px solid $yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  filter: drop-shadow(0px 0px 100px $black-opacity);
+}
+
+section h2 {
+  font-weight: 400;
+  font-size: 42px;
+  font-family: $kurale;
+  &::after {
+    @include line;
+  }
+}
+
+section p {
+  line-height: 175%;
+  margin-bottom: 25px;
+}
+
+.intro {
+  font-weight: bold;
 }
